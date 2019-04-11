@@ -1,13 +1,71 @@
-<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="./bower_components/polymer/polymer-element.html">
 
 <dom-module id="form-task">
   <template>
     <style>
       :host {
         display: block;
+        --primary-color: var(--primary-color-task-form, #3f51b5);
+        --secundary-color: var(--secundary-color-task-form, #ffffff);
+        --font-size: var(--font-size-task-form, 15px);
+        --font-weight: var(--font-weight-task-form, 300);
+
+        font-size: var(--font-size);
+        font-weight: var(--font-weight);
       }
+
+      .task-form {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+      }
+
+      .task-input {
+        border: 1px solid #ccc;
+        height: 35px;
+        width: 100%;
+        margin: 5px 0px;
+        border-radius: 4px;
+      }
+
+      .task-input:focus {
+        outline: none;
+        border: 3px solid var(--primary-color);
+      }
+
+      .task-button {
+        max-width: 75px;
+        height: 30px;
+        margin-left: auto;
+        background-color: var(--primary-color);
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        color: var(--secundary-color);
+      }
+
+      .task-button:hover {
+        border: 2px solid black;
+      }
+
+      @media (min-width: 600px) {
+        .task-form {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .task-input {
+          margin: 5px;
+        }
+      }
+
     </style>
-    <h2>Hello [[prop1]]!</h2>
+    <form class="task-form">
+      <label for="task-input" class="task-label">Task description</label>
+      <input type="text" name="task-input" class="task-input">
+      <button type="submit" class="task-button">Save task</button>
+    </form>
   </template>
 
   <script>
@@ -19,6 +77,7 @@
      * @polymer
      * @demo demo/index.html
      */
+
     class FormTask extends Polymer.Element {
       static get is() { return 'form-task'; }
       static get properties() {
