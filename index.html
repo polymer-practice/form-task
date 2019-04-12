@@ -65,29 +65,24 @@
 
     </style>
     <form class="task-form">
-      <label for="task-input" class="task-label">Task description</label>
+      <label for="task-input" class="task-label">[[inputLabel]]</label>
       <input type="text" name="task-input" class="task-input">
-      <button type="submit" class="task-button">Save task</button>
+      <button type="submit" class="task-button">[[buttonText]]</button>
     </form>
   </template>
 
   <script>
-    /**
-     * `form-task`
-     * 
-     *
-     * @customElement
-     * @polymer
-     * @demo demo/index.html
-     */
-
     class FormTask extends Polymer.Element {
       static get is() { return 'form-task'; }
       static get properties() {
         return {
-          prop1: {
+          inputLabel: {
             type: String,
-            value: 'form-task'
+            value: 'Task description'
+          },
+          buttonText: {
+            type: String,
+            value: 'Save task'
           }
         };
       }
