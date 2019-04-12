@@ -95,7 +95,18 @@
         let event;
         event.preventDefault();
         
-        event = new CustomEvent('create-task', {bubbles: true, composed: true})
+        event = new CustomEvent(
+          'create-task',
+          {
+            bubbles: true,
+            composed: true,
+            detail: {
+              taskDescription: this.taskDescription
+            }
+          }
+        )
+
+        this.dispatchEvent(event)
       }
     }
 
