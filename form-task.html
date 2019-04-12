@@ -92,10 +92,10 @@
       }
 
       submitEvent(event) {
-        let event;
+        let myEvent;
         event.preventDefault();
         
-        event = new CustomEvent(
+        myEvent = new CustomEvent(
           'create-task',
           {
             bubbles: true,
@@ -106,7 +106,7 @@
           }
         )
 
-        this.dispatchEvent(event)
+        this.dispatchEvent(myEvent)
       }
     }
 
