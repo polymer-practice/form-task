@@ -26,6 +26,7 @@
         width: 100%;
         margin: 5px 0px;
         border-radius: 4px;
+        font-size: 20px;
         @apply --task-input;
       }
 
@@ -64,9 +65,9 @@
       }
 
     </style>
-    <form class="task-form">
+    <form class="task-form" on-submit="submitEvent">
       <label for="task-input" class="task-label">[[inputLabel]]</label>
-      <input type="text" name="task-input" class="task-input">
+      <input type="text" name="task-input" class="task-input" value={{taskDescription::input}}>
       <button type="submit" class="task-button">[[buttonText]]</button>
     </form>
   </template>
@@ -83,8 +84,18 @@
           buttonText: {
             type: String,
             value: 'Save task'
+          },
+          taskDescription: {
+            type: String
           }
         };
+      }
+
+      submitEvent(event) {
+        let event;
+        event.preventDefault();
+        
+        event = new CustomEvent('create-task', {bubbles: true, composed: true})
       }
     }
 
