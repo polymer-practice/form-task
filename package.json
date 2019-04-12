@@ -1,0 +1,25 @@
+{
+  "name": "form-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "dev-tools"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polymer-practice/form-task.git"
+  },
+  "devDependencies": {
+    "dev-tools": "git@github.com:polymer-practice/dev-tools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polymer-practice/form-task/issues"
+  },
+  "homepage": "https://github.com/polymer-practice/form-task#readme"
+}
