@@ -26,11 +26,13 @@
         width: 100%;
         margin: 5px 0px;
         border-radius: 4px;
+        @apply --task-input;
       }
 
       .task-input:focus {
         outline: none;
         border: 3px solid var(--primary-color);
+        @apply --task-input-focus
       }
 
       .task-button {
@@ -42,6 +44,7 @@
         border: 1px solid #ccc;
         cursor: pointer;
         color: var(--secundary-color);
+        @apply --task-button;
       }
 
       .task-button:hover {
